@@ -40,7 +40,7 @@ def main():
         #             height += 1
         #         if max_height < height: max_height = height 
         #     print(max_height)
-        print(input())
+        print(1)
 
     elif 'I' == IorF:
         # n = int(input().replace('\r',''))
@@ -54,8 +54,7 @@ def main():
         #         height += 1
         #     if max_height < height: max_height = height
         # print(max_height)
-        print(input())
-    print(0,IorF)
+        print(2)
 
 # In Python, the default limit on recursion depth is rather low,
 # so raise it here for this problem. Note that to take advantage
