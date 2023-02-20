@@ -26,7 +26,7 @@ def main():
     # call the function and output it's result
     
     IorF = input() #.split('\\r\\n')
-    if 'F' in IorF:
+    if 'F\r' == IorF:
         # with open("./test/" + input(), mode="r") as fails:
         #     n = int(fails.readline())
         #     # arr = np.array(fails.readline().split())
@@ -42,7 +42,7 @@ def main():
         #     print(max_height)
         print(1,IorF)
 
-    elif 'I' in IorF:
+    elif 'I\r\n' in IorF:
         # n = int(input().replace('\r',''))
         # arr = input().split()
         # max_height = 0
