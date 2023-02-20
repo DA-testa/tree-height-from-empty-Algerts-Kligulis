@@ -55,6 +55,7 @@ def main():
         #     if max_height < height: max_height = height
         # print(max_height)
         print(input())
+    print(0,IorF)
 
 # In Python, the default limit on recursion depth is rather low,
 # so raise it here for this problem. Note that to take advantage
