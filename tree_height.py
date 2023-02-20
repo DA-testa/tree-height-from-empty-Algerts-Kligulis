@@ -25,9 +25,9 @@ def main():
     # input values in one variable, separate with space, split these values in an array
     # call the function and output it's result
     
-    inP = input().split('\\r\\n')
-    if 'F' == inP[0]:
-        with open("./test/" + inP[1], mode="r") as fails:
+    IorF = input() #.split('\\r\\n')
+    if 'F' in IorF:
+        with open("./test/" + input(), mode="r") as fails:
             n = int(fails.readline())
             # arr = np.array(fails.readline().split())
             arr = fails.readline().split()
@@ -41,9 +41,9 @@ def main():
                 if max_height < height: max_height = height 
             print(max_height)
 
-    elif 'I' == inP[0]:
-        n = int(inP[1])
-        arr = inP[2].split()
+    elif 'I' in IorF:
+        n = int(input().replace('\r'))
+        arr = input().split()
         max_height = 0
         for x in range(n):
             height = 1
