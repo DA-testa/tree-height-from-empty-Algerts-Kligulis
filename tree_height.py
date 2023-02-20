@@ -35,6 +35,8 @@ def main():
             for x in range(n):
                 height = 1
                 i = int(arr[x])
+                if i == x:
+                    continue
                 while i != -1:
                     i = int(arr[i])
                     height += 1
@@ -48,6 +50,8 @@ def main():
         for x in range(n):
             height = 1
             i = int(arr[x])
+            if i == x:
+                continue
             while i != -1:
                 i = int(arr[i])
                 height += 1
