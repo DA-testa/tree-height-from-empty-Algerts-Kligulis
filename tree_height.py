@@ -42,7 +42,7 @@ def main():
             print(max_height)
 
     elif 'I' in IorF:
-        n = int(input().replace('\r'))
+        n = int(input().replace('\r',''))
         arr = input().split()
         max_height = 0
         for x in range(n):
