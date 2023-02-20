@@ -1,5 +1,6 @@
 # python3
 
+import numpy as np
 import sys
 import threading
 
@@ -8,6 +9,9 @@ def compute_height(n, parents):
     # Write this function
     max_height = 0
     # Your code here
+
+
+
     return max_height
 
 
@@ -20,7 +24,34 @@ def main():
     # input number of elements
     # input values in one variable, separate with space, split these values in an array
     # call the function and output it's result
+    
+    IorF = input()
+    if IorF == 'F':
+        with open("./test/01", mode="r") as fails:
+            n = int(fails.readline())
+            arr = np.array(fails.readline().split())
+            max_height = 0
+            for x in range(n):
+                height = 1
+                i = int(arr[x])
+                while i != -1:
+                    i = int(arr[i])
+                    height += 1
+                if max_height < height: max_height = height 
+            print(max_height)
 
+    elif IorF == 'I':
+        n = int(input())
+        arr = np.array(input().split())
+        max_height = 0
+        for x in range(n):
+            height = 1
+            i = int(arr[x])
+            while i != -1:
+                i = int(arr[i])
+                height += 1
+            if max_height < height: max_height = height 
+        print(max_height)
 
 # In Python, the default limit on recursion depth is rather low,
 # so raise it here for this problem. Note that to take advantage
