@@ -27,34 +27,32 @@ def main():
     
     IorF = input().replace('\r','') #.split('\\r\\n')
     if 'F' == IorF:
-        # with open("./test/" + input(), mode="r") as fails:
-        #     n = int(fails.readline())
-        #     # arr = np.array(fails.readline().split())
-        #     arr = fails.readline().split()
-        #     max_height = 0
-        #     for x in range(n):
-        #         height = 1
-        #         i = int(arr[x])
-        #         while i != -1:
-        #             i = int(arr[i])
-        #             height += 1
-        #         if max_height < height: max_height = height 
-        #     print(max_height)
-        print(1,IorF)
+        with open("./test/" + input().replace('\r',''), mode="r") as fails:
+            n = int(fails.readline())
+            # arr = np.array(fails.readline().split())
+            arr = fails.readline().split()
+            max_height = 0
+            for x in range(n):
+                height = 1
+                i = int(arr[x])
+                while i != -1:
+                    i = int(arr[i])
+                    height += 1
+                if max_height < height: max_height = height 
+            print(max_height)
 
     elif 'I' in IorF:
-        # n = int(input().replace('\r',''))
-        # arr = input().split()
-        # max_height = 0
-        # for x in range(n):
-        #     height = 1
-        #     i = int(arr[x])
-        #     while i != -1:
-        #         i = int(arr[i])
-        #         height += 1
-        #     if max_height < height: max_height = height
-        # print(max_height)
-        print(2,IorF)
+        n = int(input().replace('\r',''))
+        arr = input().split()
+        max_height = 0
+        for x in range(n):
+            height = 1
+            i = int(arr[x])
+            while i != -1:
+                i = int(arr[i])
+                height += 1
+            if max_height < height: max_height = height
+        print(max_height)
 
 # In Python, the default limit on recursion depth is rather low,
 # so raise it here for this problem. Note that to take advantage
