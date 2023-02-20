@@ -1,6 +1,6 @@
 # python3
 
-import numpy as np
+# import numpy as np
 import sys
 import threading
 
@@ -29,7 +29,8 @@ def main():
     if 'F' == inP[0]:
         with open("./test/" + inP[1], mode="r") as fails:
             n = int(fails.readline())
-            arr = np.array(fails.readline().split())
+            # arr = np.array(fails.readline().split())
+            arr = fails.readline().split()
             max_height = 0
             for x in range(n):
                 height = 1
@@ -42,7 +43,7 @@ def main():
 
     elif 'I' == inP[0]:
         n = int(inP[1])
-        arr = np.array(inP[2].split())
+        arr = inP[2].split()
         max_height = 0
         for x in range(n):
             height = 1
