@@ -32,6 +32,9 @@ def main():
             # arr = np.array(fails.readline().split())
             arr = fails.readline().split()
             max_height = 0
+
+            heightList = [0] * n
+
             for x in range(n):
                 height = 1
                 i = int(arr[x])
