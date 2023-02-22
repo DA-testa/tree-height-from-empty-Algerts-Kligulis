@@ -27,26 +27,42 @@ def main():
     
     IorF = input().replace('\r','') #.split('\\r\\n')
     if 'F' == IorF:
+        # with open(input().replace('\r','') + '.txt', mode="r") as fails:
         with open("./test/" + input().replace('\r',''), mode="r") as fails:
             n = int(fails.readline())
             # arr = np.array(fails.readline().split())
             arr = fails.readline().split()
             max_height = 0
-
+            
             heightList = [0] * n
-
+            
             for x in range(n):
                 height = 1
                 i = int(arr[x])
-                if heightList[i]!=0:
+                # if heightList[i]!=0:
+                #     heightList[x] = heightList[i]+1
+                #     if max_height < heightList[x]: max_height = heightList[x]
+                #     continue
+                if i != -1 and heightList[i]!=0:
                     heightList[x] = heightList[i]+1
                     if max_height < heightList[x]: max_height = heightList[x]
                     continue
                 while i != -1:
                     i = int(arr[i])
+                    if i != -1 and heightList[i]!=0:
+                        height = height + heightList[i]
+                        break
                     height += 1
                 if max_height < height: max_height = height
                 heightList[x] = height
+                
+                i = int(arr[x])
+                while i != -1:
+                    if i != -1 and heightList[i]!=0:
+                        break
+                    height -= 1
+                    heightList[i] = height
+                    i = int(arr[i])
             print(max_height)
 
     elif 'I' in IorF:
@@ -59,15 +75,30 @@ def main():
         for x in range(n):
             height = 1
             i = int(arr[x])
-            if heightList[i]!=0:
+            # if heightList[i]!=0:
+            #     heightList[x] = heightList[i]+1
+            #     if max_height < heightList[x]: max_height = heightList[x]
+            #     continue
+            if i != -1 and heightList[i]!=0:
                 heightList[x] = heightList[i]+1
                 if max_height < heightList[x]: max_height = heightList[x]
                 continue
             while i != -1:
                 i = int(arr[i])
+                if i != -1 and heightList[i]!=0:
+                    height = height + heightList[i]
+                    break
                 height += 1
             if max_height < height: max_height = height
             heightList[x] = height
+            
+            i = int(arr[x])
+            while i != -1:
+                if i != -1 and heightList[i]!=0:
+                    break
+                height -= 1
+                heightList[i] = height
+                i = int(arr[i])
         print(max_height)
 
 # In Python, the default limit on recursion depth is rather low,
