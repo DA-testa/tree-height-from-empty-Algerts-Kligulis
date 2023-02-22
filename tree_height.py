@@ -49,10 +49,10 @@ def main():
                     continue
                 while i != -1:
                     i = int(arr[i])
+                    height += 1
                     if i != -1 and heightList[i]!=0:
                         height = height + heightList[i]
                         break
-                    height += 1
                 if max_height < height: max_height = height
                 heightList[x] = height
                 
@@ -85,10 +85,10 @@ def main():
                 continue
             while i != -1:
                 i = int(arr[i])
+                height += 1
                 if i != -1 and heightList[i]!=0:
                     height = height + heightList[i]
                     break
-                height += 1
             if max_height < height: max_height = height
             heightList[x] = height
             
