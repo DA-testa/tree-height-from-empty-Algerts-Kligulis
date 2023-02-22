@@ -35,27 +35,36 @@ def main():
             for x in range(n):
                 height = 1
                 i = int(arr[x])
-                if i == x:
+                if heightList[i]!=0:
+                    heightList[x] = heightList[i]+1
+                    if max_height < heightList[x]: max_height = heightList[x]
                     continue
                 while i != -1:
                     i = int(arr[i])
                     height += 1
-                if max_height < height: max_height = height 
+                if max_height < height: max_height = height
+                heightList[x] = height
             print(max_height)
 
     elif 'I' in IorF:
         n = int(input().replace('\r',''))
         arr = input().split()
         max_height = 0
+        
+        heightList = [0] * n
+        
         for x in range(n):
             height = 1
             i = int(arr[x])
-            if i == x:
+            if heightList[i]!=0:
+                heightList[x] = heightList[i]+1
+                if max_height < heightList[x]: max_height = heightList[x]
                 continue
             while i != -1:
                 i = int(arr[i])
                 height += 1
             if max_height < height: max_height = height
+            heightList[x] = height
         print(max_height)
 
 # In Python, the default limit on recursion depth is rather low,
